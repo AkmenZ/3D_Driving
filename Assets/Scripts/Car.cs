@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Car : MonoBehaviour
 {
@@ -18,6 +20,14 @@ public class Car : MonoBehaviour
         transform.Rotate(0f, steerValue * turnSpeed * Time.deltaTime, 0f);
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider obj) 
+    {
+        if(obj.CompareTag("Obstacle")) {
+            Debug.Log(message: "wtf ", obj);
+            SceneManager.LoadScene("Scene_Main_Menu"); // or 0 as its the first scene
+        }
     }
 
     public void Steer(int value) 
