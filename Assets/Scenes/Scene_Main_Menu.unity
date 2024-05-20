@@ -461,6 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1122738458}
   - component: {fileID: 1122738457}
+  - component: {fileID: 1122738459}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -481,6 +482,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 2001699028}
+  maxEnergy: 5
+  energyRechargeDuration: 1
+  energyText: {fileID: 2032128156}
+  iOSNotificationHandler: {fileID: 1122738459}
 --- !u!4 &1122738458
 Transform:
   m_ObjectHideFlags: 0
@@ -497,6 +502,18 @@ Transform:
   - {fileID: 30211432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1122738459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122738456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c789df35efb434a92ed47654ccf019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2001699027
 GameObject:
   m_ObjectHideFlags: 0

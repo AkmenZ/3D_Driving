@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private int maxEnergy;
     [SerializeField] private int energyRechargeDuration;
     [SerializeField] private TMP_Text energyText;
+    [SerializeField] private IOSNotificationHandler iOSNotificationHandler;
 
     private int energy;
 
@@ -52,6 +53,10 @@ public class MainMenu : MonoBehaviour
         if(energy == 0) {
             DateTime energyReady = DateTime.Now.AddMinutes(energyRechargeDuration);
             PlayerPrefs.SetString(energyReadyKey, energyReady.ToString());
+
+            #if UNITY_IOS
+            iOSNotificationHandler.ScheduleNotification(energyRechargeDuration);
+            #endif
         }
 
         SceneManager.LoadScene("Scene_Game");
